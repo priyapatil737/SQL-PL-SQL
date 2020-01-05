@@ -1,0 +1,1329 @@
+CREATE TABLE CUSTOMER
+(
+CUSTOMER_ID NUMBER,
+FIRST_NAME VARCHAR2(50),
+LAST_NAME VARCHAR2(50),
+MIDDLE_NAME VARCHAR2(50),
+ADDRESS_LINE1 VARCHAR2(80),
+ADDRESS_LINE2 VARCHAR2(80),
+CITY VARCHAR2(40),
+COUNTRY VARCHAR2(50),
+DATE_ADDED DATE,
+REGION VARCHAR2(10)
+);
+CREATE TABLE PRODUCT
+(
+PRODUCT_ID NUMBER,
+PRODUCT_NAME VARCHAR2(100),
+STANDARD_COST NUMBER(10,2),
+COLOR VARCHAR2(20),
+LIST_PRICE NUMBER(10,2),
+PRODUCT_SIZE NUMBER(8,2),
+WEIGHT NUMBER(10,2),
+PRODUCT_CATEGORY VARCHAR2(20)
+);
+CREATE TABLE SALES
+(
+SALES_DATE DATE,
+ORDER_ID NUMBER,
+PRODUCT_ID NUMBER,
+CUSTOMER_ID NUMBER(5,0),
+SALESPERSON_ID NUMBER(5,0),
+QUANTITY NUMBER(4,0),
+UNIT_PRICE NUMBER(10,2),
+SALES_AMOUNT NUMBER(10,2),
+TAX_AMOUNT NUMBER(10,2),
+TOTAL_AMOUNT NUMBER(10,2)
+);
+CREATE TABLE SALES_HISTORY
+(
+SALES_DATE DATE,
+ORDER_ID NUMBER,
+PRODUCT_ID NUMBER,
+CUSTOMER_ID NUMBER(5,0),
+SALESPERSON_ID NUMBER(5,0),
+QUANTITY NUMBER(4,0),
+UNIT_PRICE NUMBER(10,2),
+SALES_AMOUNT NUMBER(10,2),
+TAX_AMOUNT NUMBER(10,2),
+TOTAL_AMOUNT NUMBER(10,2)
+);
+CREATE TABLE SALESPERSON
+(
+SALESPERSON_ID NUMBER,
+JOB_TITLE VARCHAR2(80),
+FIRST_NAME VARCHAR2(50),
+LAST_NAME VARCHAR2(50),
+MIDDLE_NAME VARCHAR2(50),
+ADDRESS_LINE1 VARCHAR2(80),
+ADDRESS_LINE2 VARCHAR2(80),
+CITY VARCHAR2(40),
+COUNTRY VARCHAR2(50),
+DATE_ADDED DATE
+);
+INSERT
+INTO CUSTOMER
+(
+CUSTOMER_ID,
+FIRST_NAME,
+LAST_NAME,
+MIDDLE_NAME,
+ADDRESS_LINE1,
+ADDRESS_LINE2,
+CITY,
+COUNTRY,
+DATE_ADDED,
+REGION
+)
+VALUES
+(
+10,
+'JOHN',
+'AMIRTHRAJ',
+'T',
+'2345 PETERDRIVE',
+NULL,
+'Atlanta',
+'USA',
+to_date('12-JAN-15','DD-MON-YY'),
+'SOUTH'
+);
+INSERT
+INTO CUSTOMER
+(
+CUSTOMER_ID,
+FIRST_NAME,
+LAST_NAME,
+MIDDLE_NAME,
+ADDRESS_LINE1,
+ADDRESS_LINE2,
+CITY,
+COUNTRY,
+DATE_ADDED,
+REGION
+)
+VALUES
+(
+11,
+'TOM',
+'JOSEPH',
+'A',
+'123SANDY DRIVE',
+NULL,
+'New York',
+'USA',
+to_date('12-JAN-15','DD-MON-YY'),
+'SOUTH'
+);
+INSERT
+INTO CUSTOMER
+(
+CUSTOMER_ID,
+FIRST_NAME,
+LAST_NAME,
+MIDDLE_NAME,
+ADDRESS_LINE1,
+ADDRESS_LINE2,
+CITY,
+COUNTRY,
+DATE_ADDED,
+REGION
+)
+VALUES
+(
+12,
+'PETER',
+'MANN',
+'J',
+'3456 GATES DRIVE',
+NULL,
+'Washington',
+'USA',
+to_date('13-JAN-15','DD-MON-YY'),
+'NORTH'
+);
+COMMIT;
+INSERT
+INTO PRODUCT
+(
+PRODUCT_ID,
+PRODUCT_NAME,
+STANDARD_COST,
+COLOR,
+LIST_PRICE,
+PRODUCT_SIZE,
+WEIGHT,
+PRODUCT_CATEGORY
+)
+VALUES
+(
+100,
+'Mobile Cover',
+30,
+NULL,
+35,10,100,
+'Mobile'
+);
+INSERT
+INTO PRODUCT
+(
+PRODUCT_ID,
+PRODUCT_NAME,
+STANDARD_COST,
+COLOR,
+LIST_PRICE,
+PRODUCT_SIZE,
+WEIGHT,
+PRODUCT_CATEGORY
+)
+VALUES
+(
+200,
+'Samsung F7100',
+80,
+'BLACK',
+35,6,50,
+'Mobile'
+);
+INSERT
+INTO PRODUCT
+(
+PRODUCT_ID,
+PRODUCT_NAME,
+STANDARD_COST,
+COLOR,
+LIST_PRICE,
+PRODUCT_SIZE,
+WEIGHT,
+PRODUCT_CATEGORY
+)
+VALUES
+(
+105,
+'HTC 7800',
+70,
+'BLACK',
+80,6,40,
+'Mobile'
+);
+INSERT
+INTO PRODUCT
+(
+PRODUCT_ID,
+PRODUCT_NAME,
+STANDARD_COST,
+COLOR,
+LIST_PRICE,
+PRODUCT_SIZE,
+WEIGHT,
+PRODUCT_CATEGORY
+)
+VALUES
+(
+106,
+'Microsoft Keyboard 7865',
+50,
+'BLACK',
+60,3,20,
+'Computer'
+);
+INSERT
+INTO PRODUCT
+(
+PRODUCT_ID,
+PRODUCT_NAME,
+STANDARD_COST,
+COLOR,
+LIST_PRICE,
+PRODUCT_SIZE,
+WEIGHT,
+PRODUCT_CATEGORY
+)
+VALUES
+(
+501,
+'Microsoft Mouse 7863',
+30,
+'GREY',
+40,1,25,
+'Computer'
+);
+INSERT
+INTO PRODUCT
+(
+PRODUCT_ID,
+PRODUCT_NAME,
+STANDARD_COST,
+COLOR,
+LIST_PRICE,
+PRODUCT_SIZE,
+WEIGHT,
+PRODUCT_CATEGORY
+)
+VALUES
+(
+101,
+'iPhone',
+500,
+'GOLD',
+600,6,20,
+'Mobile'
+);
+COMMIT;
+INSERT
+INTO SALES
+(
+SALES_DATE,
+ORDER_ID,
+PRODUCT_ID,
+CUSTOMER_ID,
+SALESPERSON_ID,
+QUANTITY,
+UNIT_PRICE,
+SALES_AMOUNT,
+TAX_AMOUNT,
+TOTAL_AMOUNT
+)
+VALUES
+(
+to_date('01-FEB-15','DD-MON-YY'),
+1269,200,12,1000,20,80,1600,160,1760
+);
+INSERT
+INTO SALES
+(
+SALES_DATE,
+ORDER_ID,
+PRODUCT_ID,
+CUSTOMER_ID,
+SALESPERSON_ID,
+QUANTITY,
+UNIT_PRICE,
+SALES_AMOUNT,
+TAX_AMOUNT,
+TOTAL_AMOUNT
+)
+VALUES
+(
+to_date('01-JAN-15','DD-MON-YY'),
+1267,100,10,1000,2,20,40,4,44
+);
+INSERT
+INTO SALES
+(
+SALES_DATE,
+ORDER_ID,
+PRODUCT_ID,
+CUSTOMER_ID,
+SALESPERSON_ID,
+QUANTITY,
+UNIT_PRICE,
+SALES_AMOUNT,
+TAX_AMOUNT,
+TOTAL_AMOUNT
+)
+VALUES
+(
+to_date('01-JAN-15','DD-MON-YY'),
+1267,101,10,1000,2,30,60,6,66
+);
+INSERT
+INTO SALES
+(
+SALES_DATE,
+ORDER_ID,
+PRODUCT_ID,
+CUSTOMER_ID,
+SALESPERSON_ID,
+QUANTITY,
+UNIT_PRICE,
+SALES_AMOUNT,
+TAX_AMOUNT,
+TOTAL_AMOUNT
+)
+VALUES
+(
+to_date('02-JAN-15','DD-MON-YY'),
+1268,100,11,2000,10,30,300,30,330
+);
+INSERT
+INTO SALES
+(
+SALES_DATE,
+ORDER_ID,
+PRODUCT_ID,
+CUSTOMER_ID,
+SALESPERSON_ID,
+QUANTITY,
+UNIT_PRICE,
+SALES_AMOUNT,
+TAX_AMOUNT,
+TOTAL_AMOUNT
+)
+VALUES
+(
+to_date('09-FEB-15','DD-MON-YY'),
+1270,105,10,3000,20,70,1400,140,1540
+);
+INSERT
+INTO SALES
+(
+SALES_DATE,
+ORDER_ID,
+PRODUCT_ID,
+CUSTOMER_ID,
+SALESPERSON_ID,
+QUANTITY,
+UNIT_PRICE,
+SALES_AMOUNT,
+TAX_AMOUNT,
+TOTAL_AMOUNT
+)
+VALUES
+(
+to_date('09-FEB-15','DD-MON-YY'),
+1270,106,10,3000,10,50,500,50,550
+);
+INSERT
+INTO SALES
+(
+SALES_DATE,
+ORDER_ID,
+PRODUCT_ID,
+CUSTOMER_ID,
+SALESPERSON_ID,
+QUANTITY,
+UNIT_PRICE,
+SALES_AMOUNT,
+TAX_AMOUNT,
+TOTAL_AMOUNT
+)
+VALUES
+(
+to_date('09-FEB-15','DD-MON-YY'),
+1270,101,10,3000,10,30,300,30,330
+);
+COMMIT;
+INSERT
+INTO SALES_HISTORY
+(
+SALES_DATE,
+ORDER_ID,
+PRODUCT_ID,
+CUSTOMER_ID,
+SALESPERSON_ID,
+QUANTITY,
+UNIT_PRICE,
+SALES_AMOUNT,
+TAX_AMOUNT,
+TOTAL_AMOUNT
+)
+VALUES
+(
+to_date('01-JAN-15','DD-MON-YY'),
+1267,100,10,1000,2,20,40,4,44
+);
+INSERT
+INTO SALES_HISTORY
+(
+SALES_DATE,
+ORDER_ID,
+PRODUCT_ID,
+CUSTOMER_ID,
+SALESPERSON_ID,
+QUANTITY,
+UNIT_PRICE,
+SALES_AMOUNT,
+TAX_AMOUNT,
+TOTAL_AMOUNT
+)
+VALUES
+(
+to_date('01-JAN-15','DD-MON-YY'),
+1267,101,10,1000,2,30,60,6,66
+);
+INSERT
+INTO SALES_HISTORY
+(
+SALES_DATE,
+ORDER_ID,
+PRODUCT_ID,
+CUSTOMER_ID,
+SALESPERSON_ID,
+QUANTITY,
+UNIT_PRICE,
+SALES_AMOUNT,
+TAX_AMOUNT,
+TOTAL_AMOUNT
+)
+VALUES
+(
+to_date('07-JAN-15','DD-MON-YY'),
+1268,100,11,2000,10,30,300,30,330
+);
+COMMIT;
+INSERT
+INTO SALESPERSON
+(
+SALESPERSON_ID,
+JOB_TITLE,
+FIRST_NAME,
+LAST_NAME,
+MIDDLE_NAME,
+ADDRESS_LINE1,
+ADDRESS_LINE2,
+CITY,
+COUNTRY,
+DATE_ADDED
+)
+VALUES
+(
+1000,
+'South Manager',
+'PETER',
+'MANN',
+'R',
+'4567 ASHFORDROAD',
+NULL,
+'CUMMING',
+'USA',
+to_date('12-JAN-14','DD-MON-YY')
+);
+INSERT
+INTO SALESPERSON
+(
+SALESPERSON_ID,
+JOB_TITLE,
+FIRST_NAME,
+LAST_NAME,
+MIDDLE_NAME,
+ADDRESS_LINE1,
+ADDRESS_LINE2,
+CITY,
+COUNTRY,
+DATE_ADDED
+)
+VALUES
+(
+2000,
+'North Manager',
+'JOHN',
+'KING',
+'A',
+'67 DUNWOODY ROAD',
+NULL,
+'LASVEGAS',
+'USA',
+to_date('14-JAN-14','DD-MON-YY')
+);
+INSERT
+INTO SALESPERSON
+(
+SALESPERSON_ID,
+JOB_TITLE,
+FIRST_NAME,
+LAST_NAME,
+MIDDLE_NAME,
+ADDRESS_LINE1,
+ADDRESS_LINE2,
+CITY,
+COUNTRY,
+DATE_ADDED
+)
+VALUES
+(
+3000,
+'East Manager',
+'BOB',
+'MORIS',
+'A',
+'679 GLENDRIGEDR',
+NULL,
+'FLORIDA',
+'USA',
+to_date('14-FEB-14','DD-MON-YY')
+);
+COMMIT;
+
+SELECT * FROM CUSTOMER;
+
+SELECT * FROM PRODUCT;
+
+SELECT * FROM SALES;
+
+SELECT * FROM SALES_HISTORY;
+
+SELECT * FROM SALESPERSON;
+
+
+
+CREATE TABLE MOVIES1
+(
+MOVIE_ID NUMBER,
+MOVIE_NAME VARCHAR2(100),
+MOVIE_TYPE VARCHAR2(40),
+MOVIE_RELEASE DATE
+);
+
+--lAB 1
+--1. PRODUCE A LIST OF ROWS SHOWING ALL COLUMNS FROM THE SALES TABLE.
+SELECT * FROM SALES;
+
+--2. PRODUCE A LIST OF ROWS SHOWING ALL THE COLUMNS FROM THE PRODUCT TABLE.
+SELECT * FROM PRODUCT;
+
+--3.PRODUCE A LIST OF ROWS SHOWING ALL THE COLUMNS FROM THE CUSTOMER TABLE. 
+SELECT * FROM CUSTOMER;
+
+--4.PRODUCE A LIST OF ROWS SHOWING SALES DATE,ORDER NUMBER,PRODUCT NUMBER,CUSTOMER NUMBER,QUANTITY,TOTAL AMOUNT FROM SALES TABLES.
+SELECT * FROM SALES;
+SELECT SALES_DATE, ORDER_ID, CUSTOMER_ID, QUANTITY, TOTAL_AMOUNT FROM SALES;
+
+--5.PRODUCE A LIST OF ROWS SHOWING PRODUCT NUMBER,PRODUCT NAME,COLOR OF THE PRODUCT.
+SELECT * FROM PRODUCT;
+SELECT PRODUCT_ID, PRODUCT_NAME, COLOR FROM PRODUCT;
+
+-------------------------------------------------------------------------------------------
+
+--LAB:2
+--1. PRODUCE A LIST OF ROWS SHOWING ALL COLUMNS OF SALES TABLE WHERE TOTAL AMOUNT IS GREATER THAN 1000.
+SELECT * FROM SALES WHERE TOTAL_AMOUNT>1000;
+
+--2.PRODUCE A LIST OF ROWS SHOWING ALL COLUMNS OF SALES TABLE WHERE TOTAL AMOUNT IS NOT 44.
+SELECT * FROM SALES;
+SELECT * FROM SALES WHERE TOTAL_AMOUNT!=44;
+
+--3.PRODUCE A LIST OF ROWS SHOWING ALL COLUMNS OF SALES TABLE WHERE QUANTITY IS LESS THAN OR EQUAL TO 10.
+SELECT * FROM SALES WHERE QUANTITY>10;
+
+
+--4.PRODUCE A LIST OF ROWS SHOWING ALL COLUMNS OF SALES TABLE WHERE sales date IS EQUAL TO 9TH FEBRUARY 2015.
+SELECT * FROM SALES WHERE SALES_DATE='09-02-2015';
+
+--5.PRODUCE A LIST OF ROWS SHOWING ALL COLUMNS OF PRODUCT TABLE WHERE COLOR IS EQUAL TO RED.
+SELECT * FROM PRODUCT;
+SELECT * FROM PRODUCT WHERE COLOR='RED';
+
+--LAB 3
+--1.PRODUCE A LIST OF ALL ROWS SHOWING ALL COLUMNS FROM THE SALES TABLE WHERE TOTAL AMOUNT IS NOT BETWEEN 1 AND 100.
+SELECT * FROM SALES WHERE TOTAL_AMOUNT NOT BETWEEN 1 AND 100;
+
+--2.PRODUCE A LIST OF ALL ROWS SHOWING ALL COLUMNS FROM THE SALES TABLE WHERE QUANTITY HAS VALUE 20 OR 2 OR 10.
+SELECT * FROM SALES WHERE QUANTITY IN(20,0,10);--
+
+--3.PRODUCE A LIST OF ALL ROWS SHOWING ALL COLUMNS FROM THE PRODUCT TABLE WHERE PRODUCT NAME STARTS WITH MOB.
+SELECT * FROM PRODUCT WHERE PRODUCT_NAME LIKE 'Mob%';
+
+--4.PRODUCE A LIST OF ALL ROWS SHOWING ALL COLUMNS FROM THE SALES TABLE WHERE TOTAL AMOUNT IS GREATER THAN 50,100 AND 200.
+SELECT * FROM SALES WHERE TOTAL_AMOUNT > ALL(50,100,200);--
+
+--5.PRODUCE A LIST OF ALL ROWS SHOWING ALL COLUMNS FROM THE PRODUCTTABLE WHERE COLOR IS EQUAL TO NULL VALUE.
+SELECT * FROM PRODUCT WHERE COLOR IS NULL;
+
+--6.PRODUCE A LIST OF ALL ROWS SHOWING ALL COLUMNS FROM THE SALES TABLE WHERE TOTAL AMOUNT IS GREATER THAN 100 AND QUANTITY IS LESS THAN 20.
+SELECT * FROM SALES WHERE TOTAL_AMOUNT >100 AND QUANTITY <20;
+
+--LAB 4
+/*
+1. Produce a list of rows showing sales date, product number, order number, sales amount,
+tax amount and a calculated column (sum of sales amount and tax amount) from the
+SALES table.
+*/
+SELECT * FROM SALES;
+SELECT SALES_DATE, PRODUCT_ID, ORDER_ID, SALES_AMOUNT, 
+  TAX_AMOUNT, SALES_AMOUNT+TAX_AMOUNT
+FROM SALES;
+
+/*
+2. Produce a list of rows showing all columns from the SALES table where quantity plus 10 is
+greater than or equal to 20
+*/
+SELECT * 
+FROM SALES
+WHERE QUANTITY+10 >=10;
+/*
+3. Produce a list of rows showing sales date, product number, order number, sales amount,
+tax amount and a calculated column (total amount minus 30) from the SALES table.
+*/
+SELECT SALES_DATE,PRODUCT_ID,ORDER_ID,SALES_AMOUNT,TAX_AMOUNT,TOTAL_AMOUNT-30
+FROM SALES;
+
+
+
+Oracle_42_Lab 5 (Exercises with Answers)_Lab-5
+<:--------------------------------------------
+/*
+1. Produce a list of rows showing sales date, product number, order number, sales amount,
+tax amount from the SALES table and sort it by column tax amount in ascending order.
+*/
+SELECT SALES_DATE, PRODUCT_ID, ORDER_ID, SALES_AMOUNT, 
+	TAX_AMOUNT
+FROM SALES 
+ORDER BY TAX_AMOUNT;
+
+/*
+2. Produce a list of rows showing sales date, product number, order number, sales amount,
+tax amount from the SALES table and sort it by column sales amount and tax amount in
+ascending order.
+*/
+SELECT SALES_DATE, PRODUCT_ID, ORDER_ID, SALES_AMOUNT, TAX_AMOUNT
+FROM SALES
+ORDER BY SALES_AMOUNT,TAX_AMOUNT;
+
+/*
+3. Produce a list of rows showing order number, sales date, product number, sales amount,
+tax amount from the SALES table and sort it by order number in descending order.
+*/
+SELECT ORDER_ID, SALES_DATE, PRODUCT_ID, SALES_AMOUNT, TAX_AMOUNT
+FROM SALES
+ORDER BY ORDER_ID DESC;
+
+--Oracle_48_Lab 6 (Exercises with Answers)_SET-Operators
+--<:----------------------------------------------------
+--1. Produce a list of ALL rows showing order number by combining data from SALES and SALES_HISTORY table.
+SELECT ORDER_ID
+FROM SALES
+UNION ALL
+SELECT ORDER_ID
+FROM SALES_HISTORY;
+
+--2. Produce a list of DISTINCT rows from SALES and SALES_HISTORY table using column order number.
+SELECT ORDER_ID
+FROM SALES
+UNION
+SELECT ORDER_ID
+FROM SALES_HISTORY;
+
+--3. Produce a list of COMMON rows between SALES and SALES_HISTORY table using column order number.
+SELECT ORDER_ID
+FROM SALES
+INTERSECT
+SELECT ORDER_ID
+FROM SALES_HISTORY;
+
+
+--4. Produce a list of rows which are present in SALES table and are not present in SALES_HISTORY table using
+-- column order number.
+
+SELECT ORDER_ID
+FROM SALES
+MINUS
+SELECT ORDER_ID
+FROM SALES_HISTORY;
+
+/*Aggregate Functions
+<:-----------------
+MIN, MAX, SUM, AVG, COUNT, FIRST, LAST
+GROUP BY
+GROUP BY with HAVING clause
+
+Oracle_53_Lab 7 (Exercises with Answers)_Group-BY
+<:-----------------------------------------------*/
+--1. Write a query that shows the number of rows in SALES table.
+SELECT COUNT(*) FROM SALES;
+
+--2. Produce a list which shows total sales volume broken by sales date from SALES table.
+
+SELECT SALES_DATE,SUM(SALES_AMOUNT)
+FROM SALES 
+GROUP BY SALES_DATE;
+
+--3. Produce a list which shows maximum sales volume broken by sales date and order number from SALES table.
+SELECT SALES_DATE, ORDER_ID, MAX(SALES_AMOUNT)
+FROM SALES 
+GROUP BY SALES_DATE,ORDER_ID;
+---SALES_AMOUNT<--->TOTAL_AMOUNT
+
+--4. Produce a list which shows minimum sales volume broken by sales date from SALES table and minimum sales
+-- volume is less than 100. (Hint: use HAVING clause)
+SELECT SALES_DATE,MIN(SALES_AMOUNT)
+FROM SALES
+GROUP BY SALES_DATE
+HAVING MIN(SALES_AMOUNT)<100;
+
+/*
+INNER JOIN, LEFT OUTER JOIM, RIGHT OUTER JOIN, CROSS JOIN, NATURAL JOIN
+Joining 3 and 4 table.
+Note: NATURAL JOIN is not used most of the times.
+Oracle_64_Lab 8 (Exercises with Answers)_Joins
+<:--------------------------------------------*/
+/*
+1. Produce a list which returns all rows from the SALES and PRODUCT tables where there is
+a matching PRODUCT_ID value in both the SALES and PRODUCT tables.
+*/
+
+SELECT * 
+FROM SALES 
+INNER JOIN PRODUCT
+ON SALES.PRODUCT_ID=PRODUCT.PRODUCT_ID;
+
+
+/*
+2. Produce a list which returns all rows from the SALES table and only those rows from the
+PRODUCT table where the joined field PRODUCT_ID is equal.
+*/
+SELECT * 
+FROM SALES 
+LEFT OUTER JOIN PRODUCT
+ON SALES.PRODUCT_ID=PRODUCT.PRODUCT_ID;
+
+
+--Note: If a PRODUCT_ID value in the SALES table does not exist in the PRODUCT
+--table, all fields in the PRODUCT table will display as <null> in the result set.
+
+/*
+3. Produce a list which returns all rows from the PRODUCT table and only those rows from
+the SALES table where the joined field PRODUCT_ID is equal.
+*/
+SELECT *
+FROM SALES
+RIGHT OUTER JOIN PRODUCT
+ON SALES.PRODUCT_ID=PRODUCT.PRODUCT_ID;
+
+/*
+4. Produce a list which returns all rows from the SALES and PRODUCT table irrespective of
+PRODUCT_ID match between these tables. (PRODUCT_ID can match between both these
+tables or it might not match)
+*/
+
+SELECT * 
+FROM SALES
+FULL OUTER JOIN PRODUCT
+ON SALES.PRODUCT_ID=PRODUCT.PRODUCT_ID;
+
+
+
+/*
+Oracle_70_Lab 9 (Exercises with Answers)_Functions
+<:------------------------------------------------*/
+SELECT ROUND(49.123) FROM DUAL;
+
+SELECT CEIL(48.99) FROM DUAL;
+
+SELECT POWER(4,2) FROM DUAL;
+
+SELECT SQRT(16) FROM DUAL;
+
+SELECT GREATEST(2,4,1) FROM DUAL;
+
+SELECT LOWER('HGH') FROM DUAL;
+
+SELECT LENGTH('GFXCGC') FROM DUAL;
+
+SELECT SUBSTR('JAMES',2,3) FROM DUAL;
+
+SELECT MONTHS_BETWEEN('17-12-19','30-11-99') FROM DUAL;
+
+SELECT ADD_MONTHS('01-12-19',4) FROM DUAL;
+
+SELECT LAST_DAY('01-03-15') FROM DUAL;
+
+SELECT NEXT_DAY('01-03-15','SUNDAY') FROM DUAL;
+
+
+--------------------------------
+SELECT ADD_MONTHS('01-Aug-09', 3) FROM DUAL;
+
+SELECT ADD_MONTHS('01-Aug-09', -3) FROM DUAL;
+
+SELECT CONCAT('RUSH ', 'HOUR') FROM DUAL;
+
+SELECT LENGTH('SQL Course') FROM DUAL;
+
+SELECT LPAD('course', 9) FROM DUAL;
+
+SELECT RPAD('course', 9) FROM DUAL;
+
+SELECT INSTR('Oracle Course', 'r') FROM DUAL;
+
+SELECT LOG(10, 20) FROM DUAL;
+
+SELECT LAST_DAY(TO_DATE('2015/02/15', 'yyyy/mm/dd')) FROM DUAL;
+
+SELECT MONTHS_BETWEEN (TO_DATE ('2015/01/01','yyyy/mm/dd'), TO_DATE ('2015/03/01', 'yyyy/mm/dd') ) FROM DUAL;
+
+SELECT ROUND(MONTHS_BETWEEN('17-12-19','30-11-99')/12) Year,
+  ROUND((MONTHS_BETWEEN('17-12-19','30-11-99')/12)/30) MONTH,
+  CEIL(((MONTHS_BETWEEN('17-12-19','30-11-99')/12)/30)/7) DAYS  
+FROM DUAL;
+
+
+SELECT * FROM ALL_TABLES
+WHERE OWNER='INVENTORY1';
+
+SELECT *
+FROM ALL_TAB_COLUMNS
+WHERE OWNER='INVENTORY1';
+
+SELECT * 
+FROM TAB;
+
+SELECT OWNER,TABLE_NAME,COLUMN_NAME,DATA_TYPE
+FROM ALL_TAB_COLUMNS
+WHERE OWNER='INVENTORY1';
+
+
+SELECT OWNER,TABLE_NAME,COLUMN_NAME,DATA_TYPE
+FROM ALL_TAB_COLUMNS
+WHERE OWNER='INVENTORY1';
+OR
+SELECT  COUNT(COLUMN_NAME)
+FROM ALL_TAB_COLUMNS
+GROUP BY TABLE_NAME;
+
+--------------------------------------------------------------------------------------------
+Oracle_79_Lab 11 (Exercises with Answers)_CAD
+<:-------------------------------------------
+/*
+1. Create table called MOVIES that stores below columns
+* movie number (accepts only numbers)
+* movie name (accepts numbers and characters and maximum length can be 100)
+* movie type (accepts numbers and characters and maximum length can be 40)
+* movie release date (accepts only dates)
+*/
+CREATE TABLE MOVIES
+(
+MOVIE_ID NUMBER,
+MOVIE_NAME VARCHAR2(100),
+MOVIE_TYPE VARCHAR2(40),
+MOVIE_RELEASE DATE
+);
+
+
+/*
+2. Add a new column movie language (accepts numbers and characters and maximum
+length can be 30) to the MOVIES table.
+*/
+ALTER TABLE MOVIES ADD MOVIE_LANGUAGE VARCHAR2(30);
+
+/*
+3. Modify the MOVIES table by increasing the maximum length of column movie type to 50.
+*/
+ALTER TABLE MOVIES 
+MODIFY MOVIE_TYPE VARCHAR2(50);
+
+/*
+4. Go ahead and delete the MOVIES table.
+*/
+DROP TABLE MOVIES;
+
+/*
+COMMIT, ROLLBACK, INSERT, UPDATE, DELETE, TRUNCATE
+Oracle_85_Lab 12 (Exercises with Answers)_UID
+<:-------------------------------------------*/
+CREATE TABLE movies
+(
+Movie_number number,
+Movie_name varchar2(100),
+Movie_type varchar2(40),
+Movie_release_date date
+);
+
+/*
+1. Insert 3 rows into the MOVIES table, Below is the MOVIES table structure.
+Movie_number number,
+Movie_name varchar2(100),
+Movie_type varchar2(40),
+Movie_release_date date
+*/
+INSERT INTO movies VALUES
+(
+101,
+'TERMINATOR',
+'ACTION',
+'12-JAN-2015'
+);
+COMMIT;
+
+INSERT INTO movies VALUES
+(
+102,
+'BABIES DAY OUT',
+'COMEDY',
+'11-FEB-2014'
+);
+COMMIT;
+
+INSERT INTO movies VALUES
+(
+103,
+'RUSH HOUR',
+'ACTION',
+'12-DEC-2001'
+);
+COMMIT;
+
+select * from movies;
+
+--2. Modify movie release date of movie number 101 from ’12-jan-2015’ to ’14-jan-2015’
+update movies
+set movie_release_date=replace('14-01-15','12-01-15')
+where movie_number=101;
+
+
+-- 3. Delete the row from MOVIES table where the movie name is RUSH HOUR.
+
+alter table movies 
+drop movie_number,movie_name,movie_type,movie_release_date
+where movie_name='RUSH HOUR';
+
+DROP TABLE movies;
+
+------------------------------------------------------------------------------------------------------
+/*Oracle_95_Lab 13 (Exercises with Answers)_Constraints
+<:---------------------------------------------------REFERENCES-NOT WORKING*/
+/*
+1. Create table called MOVIES that stores below columns and enforce a NOT NULL
+constraint on column movie number
+* movie number (accepts only numbers)
+* movie name (accepts numbers and characters and maximum length can be 100)
+* movie type (accepts numbers and characters and maximum length can be 40)
+* movie release date (accepts only dates)
+*/
+
+CREATE TABLE MOVIES 
+(
+MOVIE_ID NUMBER NOT NULL,
+MOVIE_NAME VARCHAR2(100),
+MOVIE_TYPE VARCHAR2(40),
+MOVIE_RELEASE_DATE DATE
+);
+DROP TABLE MOVIES;
+
+/*
+2. Create table called MOVIES that stores below columns and enforce a UNIQUE constraint on column movie number
+* movie number (accepts only numbers)
+* movie name (accepts numbers and characters and maximum length can be 100)
+* movie type (accepts numbers and characters and maximum length can be 40)
+* movie release date (accepts only dates)
+*/
+CREATE TABLE MOVIES
+(
+MOVIE_ID NUMBER UNIQUE,
+MOVIE_NAME VARCHAR2(100),
+MOVIE_TYPE VARCHAR2(40),
+MOVIE_RELEASE_DATE DATE
+);
+DROP TABLE MOVIES;
+
+/*
+3. Create table called MOVIES that stores below columns and enforce a PRIMARY KEY constraint on column movie number
+* movie number (accepts only numbers)
+* movie name (accepts numbers and characters and maximum length can be 100)
+* movie type (accepts numbers and characters and maximum length can be 40)
+* movie release date (accepts only dates)
+*/
+CREATE TABLE MOVIES
+(
+MOVIE_ID NUMBER PRIMARY KEY,
+MOVIE_NAME VARCHAR2(100),
+MOVIE_TYPE VARCHAR2(40),
+MOVIE_RELEASE_DATE DATE
+);
+DROP TABLE MOVIES;
+/*
+4. Create table called MOVIES that stores below columns and enforce a CHECK constraint on column movie type
+(values allowed are COMEDY and ACTION)
+* movie number (accepts only numbers)
+* movie name (accepts numbers and characters and maximum length can be 100)
+* movie type (accepts numbers and characters and maximum length can be 40)
+* movie release date (accepts only dates)
+*/
+CREATE TABLE MOVIES
+(
+MOVIE_ID NUMBER,
+MOVIE_NAME VARCHAR2(100),
+MOVIE_TYPE VARCHAR2(40) CHECK(MOVIE_TYPE IN
+('COMEDY','ACTION')),
+MOVIE_RELEASE_DATE DATE
+);
+
+/*
+5. Create table called MOVIES that stores below columns and enforce a foreign key constraint on column movie
+director number which references table DIRECTOR and column DIRECTOR_NUMBER.
+* movie number (accepts only numbers)
+* movie name (accepts numbers and characters and maximum length can be 100)
+* movie type (accepts numbers and characters and maximum length can be 40)
+* movie release date (accepts only dates)
+* movie director number (accepts only numbers)
+*/
+CREATE TABLE DIRECTOR
+(
+DIRECTOR_NUMBER NUMBER PRIMARY KEY
+);
+
+CREATE TABLE MOVIES
+(
+MOVIE_ID NUMBER,
+MOVIE_NAME VARCHAR2(100),
+MOVIE_TYPE VARCHAR2(40),
+MOVIE_RELEASE_DATE DATE,
+MOVIE_DIRECTOR_NUMBER NUMBER 
+REFERENCES DIRECTOR(DIRECTOR_NUMBER)
+);
+/*
+------------------------------------------------------------------------------------------------
+Oracle_100_Lab 14 (Exercises with Answers)_Views
+<:----------------------------------------------*/
+/*
+1. Create view called SALES_MOBILE that captures below columns and where product category is equal to Mobile.
+* SALES_DATE (Source: SALES table)
+* ORDER_ID (Source: SALES table)
+* QUANTITY (Source: SALES table)
+* UNIT_PRICE (Source: SALES table)
+* TOTAL_AMOUNT (Source: SALES table)
+* PRODUCT_NAME (Source: PRODUCT table)
+* PRODUCT_CATEGORY (Source: PRODUCT table)
+*/
+CREATE VIEW SALES_MOBILE
+AS 
+SELECT SALES_DATE,ORDER_ID,QUANTITY,UNIT_PRICE,TOTAL_AMOUNT,PRODUCT_NAME,PRODUCT_CATEGORY
+FROM SALES S,PRODUCT P
+WHERE P.PRODUCT_CATEGORY='MOBILE';
+
+select * from
+SALES_MOBILE;
+
+--2. Add a new column PRODUCT_ID to the SALES_MOBILE view.
+CREATE OR REPLACE VIEW SALES_MOBILE
+AS
+SELECT SALES_DATE,ORDER_ID,QUANTITY,UNIT_PRICE,TOTAL_AMOUNT,PRODUCT_NAME,PRODUCT_CATEGORY,P.PRODUCT_ID
+FROM SALES S,PRODUCT P
+WHERE P.PRODUCT_CATEGORY='MOBILE';
+
+
+--3. Go ahead and delete the SALES_MOBILE view.
+
+DROP VIEW SALES_MOBILE;
+----------------------------------------------------------------------------------------------------------------
+
+/*
+SYNONYMS Exercise
+
+SEQUENCE Exercise
+
+Oracle_114_Lets create an Index
+<:-----------------------------*/
+CREATE INDEX customer_idx ON CUSTOMER(city);
+
+/*
+Oracle_115_UNIQUE Index
+<:---------------------*/
+CREATE UNIQUE INDEX customerid_idx ON CUSTOMER(customer_id);
+
+/*
+Oracle_116_Dropping and Renaming an Index
+<:---------------------------------------
+Drop an Index:*/
+DROP INDEX customer_idx;
+
+/*Rename an Index:*/
+ALTER INDEX customerid_idx RENAME TO customer_phone_idx;
+
+-------------------------------------------------------------------------------------------------
+/*TO FIND NO. OF CONSTRAINTS ON A TABLE*/
+SELECT * 
+FROM ALL_CONSTRAINTS
+WHERE TABLE_NAME = 'EMPLOYEES';
+
+SELECT count(*) 
+FROM ALL_CONSTRAINTS
+WHERE TABLE_NAME = 'EMPLOYEES';
+
+
+
+/*
+----------------------------------------
+SYNONYM
+*/
+CREATE SYNONYM PRO FOR PRODUCT;
+
+SELECT * FROM PRO;
+----------------------
+------SEQUENCE
+CREATE TABLE MY_CUST
+(
+CUST_ID NUMBER,
+CUST_NAME VARCHAR2(20)
+);
+
+CREATE SEQUENCE CUST_ID
+MINVALUE 1
+MAXVALUE 100
+START WITH 1
+INCREMENT BY 2
+CACHE 10;
+
+SELECT * FROM MY_CUST;
+
+INSERT INTO MY_CUST VALUES(CUST_ID1.NEXTVAL,'PRIYA');
+
+
+DROP SEQUENCE CUST_ID;
+
+-----------------------------------------------------------------------------------
+
+CREATE USER SCOTT IDENTIFIED BY SCOTT;
+
+GRANT SELECT ON INVENTORY1.PRODUCT TO SCOTT;
+
+GRANT SELECT ON INVENTORY1.SALES TO SCOTT;
+
+
+/*Oracle_106_What is a SUB Query
+<:----------------------------
+A SUB Query is a query within a query which can return one or more rows.
+These subqueries can reside in the WHERE clause, the FROM clause, or the SELECT clause.*/
+
+SELECT * FROM sales
+WHERE customer_id =
+(
+SELECT customer_id FROM customer
+WHERE last_name='JOSEPH'
+)
+
+SELECT * FROM sales
+WHERE customer_id IN
+(
+SELECT customer_id FROM CUSTOMER WHERE REGION='SOUTH'
+)
+
+Oracle_107_Sub queries on multiple columns (Pairwise Comparision)
+<:---------------------------------------------------------------
+SELECT sales_date, order_id, customer_id, product_id, unit_price
+FROM sales
+WHERE (product_id, unit_price) IN
+( SELECT product_id, unit_price
+FROM sales
+WHERE sales_date='01-JAN-2015'
+)
+
+Oracle_108_Sub queries on multiple columns (Non-Pairwise Comparision)
+---------------------------------------------------------------------
+SELECT sales_date, order_id, customer_id, product_id, unit_price
+FROM sales
+WHERE product_id IN
+( SELECT product_id FROM sales
+WHERE sales_date='01-JAN-2015')
+AND unit_price IN
+( SELECT unit_price
+FROM sales
+WHERE sales_date='01-JAN-2015'
+)
+
+Oracle_109_Sub queries in the FROM clause
+<:---------------------------------------
+SELECT s.sales_date, s.order_id, s.customer_id,
+s.salesperson_id, s.total_amount,
+st.sales_total
+FROM sales s,
+(SELECT sum(total_amount) as sales_total FROM sales) st
+
+SELECT s.sales_date, s.order_id, s.customer_id,
+s.salesperson_id, s.total_amount,
+st.sales_total
+FROM sales s,
+(SELECT sales_date, sum(total_amount) as sales_total FROM sales
+GROUP BY sales_date) st
+WHERE s.sales_date=st.sales_date
+
+Oracle_111_Scalar Sub queries
+<:---------------------------
+SELECT s.sales_date, s.order_id, s.customer_id,
+s.salesperson_id, s.total_amount,
+(
+SELECT sum(total_amount) as sales_total FROM sales
+) AS sales_total
+FROM sales s
+
+Oracle_112_Correlated SUB Query
+<:-----------------------------
+Correlated subquery is a subquery (a query nested inside another query) that uses values from the outer query and evaluated
+once for each row processed by the outer query.
+
+-- SUB QUERY
+SELECT * FROM sales
+WHERE customer_id =
+(
+SELECT customer_id FROM customer
+WHERE last_name='JOSEPH'
+);
+
+SELECT * FROM sales
+WHERE customer_id IN
+(
+SELECT customer_id FROM CUSTOMER WHERE REGION='SOUTH'
+);
+
+-- Sub queries on multiple columns (Pairwise Comparision)
+SELECT sales_date, order_id, customer_id, product_id, unit_price
+FROM sales
+WHERE (product_id, unit_price) IN
+(
+SELECT product_id, unit_price
+FROM sales
+WHERE sales_date='01-JAN-2015'
+);
+
+-- Sub queries on multiple columns (Non-Pairwise Comparision)
+SELECT sales_date, order_id, customer_id, product_id, unit_price
+FROM sales
+WHERE product_id IN
+(
+SELECT product_id FROM sales
+WHERE sales_date='01-JAN-2015'
+)
+AND unit_price IN
+(
+SELECT unit_price
+FROM sales
+WHERE sales_date='01-JAN-2015'
+);
+
+-- Sub queries in the FROM clause
+SELECT s.sales_date, s.order_id, s.customer_id,
+s.salesperson_id, s.total_amount,
+st.sales_total
+FROM sales s,
+(
+SELECT sum(total_amount) as sales_total FROM sales
+) st;
+
+SELECT s.sales_date, s.order_id, s.customer_id,
+s.salesperson_id, s.total_amount,
+st.sales_total
+FROM sales s,
+(
+SELECT sales_date, sum(total_amount) as sales_total FROM sales
+GROUP BY sales_date) st
+WHERE s.sales_date=st.sales_date;
+
+-- Sub queries in the WITH clause
+With st as
+(
+SELECT sales_Date, sum(total_amount) as sales_total
+from sales
+group by sales_date
+)
+SELECT s.sales_date, s.order_id, s.customer_id, s.salesperson_id,
+s.total_amount, s.sales_amount
+FROM sales s, st
+WHERE s.sales_date = st.sales_date;
+
+--Scalar Sub queries
+SELECT s.sales_date, s.order_id, s.customer_id,
+s.salesperson_id, s.total_amount,
+(
+SELECT sum(total_amount) as sales_total FROM sales
+)
+AS sales_total
+FROM sales s;
+
+-- Correlated SUB Query
+SELECT * FROM sales x
+WHERE TOTAL_AMOUNT > (
+SELECT AVG(TOTAL_AMOUNT) FROM sales y
+WHERE y.customer_id=x.customer_id
+)
+ORDER BY customer_id;
+
